@@ -1,0 +1,305 @@
+/* $Id$ */
+
+/**
+ * SlipJaq CSS
+ *
+ * Name: Sliding Login Panel with jQuery 1.3.2
+ * Author: Jérémie Tisseau
+ * Author URI: http://web-kreation.com/
+ * Script URI: http://web-kreation.com/index.php/tutorials/nice-clean-sliding-login-panel-built-with-jquery/
+ * Date: March 26, 2009
+ * Version: 1.0
+ *
+ * Modifications for Drupal © 2010 teeny-tiny websites
+ * http://www.teenytinywebsites.com
+ *
+ * Distributed under the terms of the GNU General Public License, version 3.0
+ * http://www.gnu.org/licenses/gpl-3.0.html
+ */ 
+
+/***** clearfix *****/
+.slpjq-clear {
+  clear: both;
+  height: 0;
+  line-height: 0;
+}
+
+.slpjq-clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.slpjq-clearfix {
+  display: inline-block;
+}
+/* Hides from IE-mac \*/
+* html .slpjq-clearfix {
+  height: 1%;
+}
+.slpjq-clearfix {
+  display: block;
+}
+/* End hide from IE-mac */
+.slpjq-clearfix {
+  height: 1%;
+}
+.slpjq-clearfix {
+  display: block;
+}
+
+/* Panel Tab/button */
+.slpjq-tab {
+  background: url(../images/tab_b.png) repeat-x 0 0;
+  height: 42px;
+  width: 100%;
+  z-index: 999;
+}
+
+.slpjq-tab ul.slpjq-login,
+.slpjq-tab ul.slpjq-logout {
+  display: block;
+  float: right;
+  clear: right;
+  height: 42px;
+  width: auto;
+  line-height: 42px;
+  color: white;
+  font-size: 80%;
+  text-align: center;
+}
+
+div#slpjq_toppanel {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+div#slpjq_toppanel ul {
+  white-space:nowrap;
+}
+#slpjq_toppanel div.slpjq-tab ul {
+  margin: 0;
+}
+#slpjq_toppanel div.slpjq-tab ul.slpjq-login li,
+#slpjq_toppanel div.slpjq-tab ul.slpjq-logout li {
+  background: url(../images/tab_m.png) repeat-x 0 0;
+  display: block;
+  float: left;
+  height: 42px;
+  margin: 0;
+  padding: 0 1.0em 0 0;
+  text-align: center;
+}
+#slpjq_toppanel .slpjq-tab ul.slpjq-login li.slpjq-left,
+#slpjq_toppanel .slpjq-tab ul.slpjq-logout li.slpjq-left {
+  background: url(../images/tab_l.png) no-repeat left 0;
+  padding: 0;
+  width: 30px;
+}
+
+#slpjq_toppanel div.slpjq-tab ul.slpjq-login li.slpjq-right,
+#slpjq_toppanel div.slpjq-tab ul.slpjq-logout li.slpjq-right {
+  background: url(../images/tab_r.png) no-repeat left 0;
+  padding: 0;
+  width: 30px;
+}
+
+#slpjq_toppanel .slpjq-tab ul.slpjq-login li a,
+#slpjq_toppanel .slpjq-tab ul.slpjq-logout li a {
+  color: #15ADFF;
+}
+
+.slpjq-tab ul.slpjq-login li a:hover,
+.slpjq-tab ul.slpjq-logout li a:hover {
+  color: white;
+}
+
+#slpjq_toppanel .slpjq-tab .slpjq-sep {
+  color: #414141;
+  padding: 0 0.5em;
+}
+.slpjq-tab .slpjq-sep:before {
+  content: "|";
+}
+
+.slpjq-tab a.slpjq-open,
+.slpjq-tab a.slpjq-close {
+  height: 20px;
+  line-height: 20px !important;
+  padding-left: 30px !important;
+  padding-right: 0;
+  cursor: pointer;
+  display: block;
+  position: relative;
+  top: 11px;
+}
+
+.slpjq-tab a.slpjq-open {
+  background: url(../images/bt_open.png) no-repeat left 0;
+}
+.slpjq-tab a.slpjq-close {
+  background: url(../images/bt_close.png) no-repeat left 0;
+}
+.slpjq-tab a.slpjq-open:hover {
+  background: url(../images/bt_open.png) no-repeat left -19px;
+}
+.slpjq-tab a.slpjq-close:hover {
+  background: url(../images/bt_close.png) no-repeat left -19px;
+}
+
+/* sliding panel */
+#slpjq_toppanel {
+  clear: both;
+  position: absolute;
+  top: 0px;
+  text-align: center;
+  width: 100%;
+  z-index: 999;
+}
+
+#slpjq_panel {
+  background: #272727;
+  color: #999;
+  display: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+#slpjq_panel h1 {
+  font-size: 1.6em;
+  padding: 0.1em;
+  margin: 0;
+  color: white;
+}
+
+#slpjq_panel h2{
+  font-size: 1.2em;
+  padding: 10px 0 5px;
+  margin: 0;
+  color: white;
+}
+
+#slpjq_panel p {
+  margin: 5px 0;
+  padding: 0;
+}
+
+#slpjq_panel a {
+  text-decoration: none;
+  color: #15ADFF;
+}
+
+#slpjq_panel a:hover {
+  color: white;
+}
+
+#slpjq_panel a.slpjq-lost-pwd {
+  display: block;
+  float: left;
+}
+
+#slpjq_panel form {
+  margin: 0;
+  padding: 0;
+}
+#slpjq_panel form div.form-item,
+#slpjq_panel form div.form-item label,
+#slpjq_panel form .form-submit {
+  margin: 0.4em 0 0 0;
+  padding: 0;
+}
+#slpjq_panel form .form-submit {
+  padding: 0 0.5em;
+}
+
+#slpjq_panel form#user-login-form div.item-list ul li {
+  list-style: none;
+}
+#slpjq_panel form#user-login-form div.item-list ul li.first {
+}
+
+#slpjq_panel .slpjq-content {
+  width: 960px;
+  margin: 0 auto;
+  padding-top: 15px;
+  text-align: left;
+  font-size: 0.85em;
+}
+
+#slpjq_panel .slpjq-content .slpjq-left {
+  width: 260px;
+  float: left;
+  padding: 0 8px;
+}
+#slpjq_panel .slpjq-content h1 {
+  font-weight: normal;
+  font-size: 200%;
+  letter-spacing: -0.04em;
+}
+#slpjq_panel .slpjq-content .slpjq-center {
+  width: 200px;
+  float: left;
+  padding: 0 8px;
+}
+
+#slpjq_panel .slpjq-content .slpjq-right {
+  width: 400px;
+  padding: 0 8px;
+}
+
+#slpjq_panel .slpjq-content form {
+  margin: 0 0 10px 0;
+}
+
+#slpjq_panel .slpjq-content label {
+  padding-top: 8px;
+  clear: both;
+  display: block;
+}
+
+#slpjq_panel .slpjq-content .slpjq-center form input.form-text {
+  width: 170px;
+}
+
+#slpjq_panel form input#edit-name,
+#slpjq_panel form input#edit-name-1 {
+  width: 170px;
+}
+
+#slpjq_panel .slpjq-content input.slpjq-field {
+  border: 1px #1A1A1A solid;
+  background: #414141;
+  margin-right: 5px;
+  width: 200px;
+  color: white;
+  height: 16px;
+}
+
+#slpjq_panel .slpjq-content input.slpjq-field:focus {
+  background: #545454;
+}
+
+/* Login and Register buttons */
+#slpjq_panel .slpjq-content input.bt-login,
+#slpjq_panel .slpjq-content input.bt-register {
+  display: block;
+  float: left;
+  clear: left;
+  height: 24px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#slpjq_panel .slpjq-lost-pwd {
+  display: block;
+  float:left;
+  clear: right;
+  padding: 15px 5px 0;
+  font-size: 0.95em;
+  text-decoration: underline;
+}
