@@ -1,0 +1,18 @@
+; $Id$
+;
+; © 2010 teeny-tiny websites
+; www.teenytinywebsites.com
+;
+; Distributed under the terms of the GNU General Public License, version 3.0
+; http://www.gnu.org/licenses/gpl-3.0.html
+;
+name = SlipJaq
+description = Sliding login panel using jQuery
+core = 6.x
+;package = "Other"
+dependencies[] = jquery_ui
+
+version = "6.x-1.0-beta3"
+core = "6.x"
+project = "slpjq"
+datestamp = "1270591885"
