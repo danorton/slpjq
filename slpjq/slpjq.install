@@ -1,0 +1,71 @@
+<?php
+// $Id: $
+
+/**
+ * @file
+ * Install, update and uninstall functions for the SlipJaq module.
+ *
+ * @code
+ * © 2010 teeny-tiny websites
+ * http://www.teenytinywebsites.com
+ *
+ * Distributed under the terms of the GNU General Public License, version 3.0
+ * http://www.gnu.org/licenses/gpl-3.0.html
+ * @endcode
+ */
+
+/**
+ * @defgroup slpjq SlipJaq
+ * @{
+ */
+
+/**
+ * @name Installation hook functions
+ * @{
+ */
+
+/**
+ * Implementation of hook_install().
+ *
+ * To maximize code reusability, we simply pull in our admin
+ * configuration form, which contains all of our variable names
+ * and defaults.
+ */
+function slpjq_install() {
+  $form = slpjq_install_get_config_form();
+  foreach ($form as $field => $attrs) {
+    variable_set($field, $attrs['#default_value']);
+  }
+}
+
+
+/**
+ * Implementation of hook_uninstall().
+ *
+ * We use the same reusability technique as we did above with
+ * slpjq_install().
+ */
+function slpjq_uninstall() {
+  $form = slpjq_install_get_config_form();
+  foreach ($form as $field => $attrs) {
+    variable_del($field);
+  }
+}
+/* @} Installation hook functions */
+
+/**
+ * @name Installation internal functions
+ * @{
+ */
+
+/**
+ * Load up our full module and invoke slpjq_get_config_form().
+ */
+function slpjq_install_get_config_form() {
+  if (!function_exists('slpjq_get_config_form')) {
+    require_once('slpjq.module');
+  }
+  return slpjq_get_config_form();
+}
+/* @} Installation internal functions*/
+/* @} SlipJaq */
