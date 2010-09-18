@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$a00004.html#ga99919dc5995730288cfdee99ab8ad292" title="Return the form for our settings page." alt="" coords="305,5,415,38"/>
+<area shape="rect" id="node5" href="$a00004.html#ga289eae396557732e0f1e8389133b631c" title="Implementation of hook_block()." alt="" coords="307,61,413,94"/>
+<area shape="rect" id="node7" href="$a00004.html#gad51b581062caf5fe556d4ff0eba7af53" title="Load up our full module and invoke slpjq_get_config_form()." alt="" coords="241,117,479,150"/>
+<area shape="rect" id="node9" href="$a00004.html#ga82b1d9c1f56cd6a06794fa468d2665c2" title="Implementation of hook_install()." alt="" coords="537,89,647,122"/>
+<area shape="rect" id="node11" href="$a00004.html#gac11ad28cc848fd92665185ce4eb48736" title="Implementation of hook_uninstall()." alt="" coords="528,145,656,178"/>
+</map>
