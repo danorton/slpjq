@@ -71,7 +71,7 @@ global $base_path;
       <?php if ($logged_in): ?>
       <li><?php print t('Hello, !user',
             array('!user' =>
-              "<a href=\"/user\" title=\"" . t('View member profile') . "\">" . htmlspecialchars($user->name) . "</a>"));?></li>
+              "<a href=\"" . $base_path . "user\" title=\"" . t('View member profile') . "\">" . htmlspecialchars($user->name) . "</a>"));?></li>
       <li class="slpjq-sep"></li>
       <li><a id="slpjq_logout" class="slpjq-logout" href="<?php echo $base_path ?>logout"><?php print t('Log out'); ?></a></li>
       <?php else: ?>
