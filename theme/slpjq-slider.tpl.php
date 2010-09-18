@@ -30,6 +30,7 @@
 /**
  * @cond
  */
+global $base_path;
 ?>
 <div id="slpjq_toppanel">
   <?php if (!$logged_in): ?>
@@ -53,7 +54,7 @@
       <div class="slpjq-center">
         <h1><?php print t('Member login'); ?></h1>
         <?php print drupal_get_form('user_login_block'); ?>
-        <p><a href="/user/password"><?php print t('Request new password'); ?></a></p>
+        <p><a href="<?php echo $base_path ?>user/password"><?php print t('Request new password'); ?></a></p>
       </div>
       <?php if ($user_register): ?>
       <div class="slpjq-left slpjq-right">
@@ -72,7 +73,7 @@
             array('!user' =>
               "<a href=\"/user\" title=\"" . t('View member profile') . "\">" . htmlspecialchars($user->name) . "</a>"));?></li>
       <li class="slpjq-sep"></li>
-      <li><a id="slpjq_logout" class="slpjq-logout" href="/logout"><?php print t('Log out'); ?></a></li>
+      <li><a id="slpjq_logout" class="slpjq-logout" href="<?php echo $base_path ?>logout"><?php print t('Log out'); ?></a></li>
       <?php else: ?>
       <li><?php print t('Hello, Guest'); ?></li>
       <li id="slpjq_toggle">
